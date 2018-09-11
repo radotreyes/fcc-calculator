@@ -1,0 +1,130 @@
+:root {
+  font-family: Inconsolata, monospace;
+  background: linear-gradient(215deg, #fc789a 0%, #fc4675 48%, #cf3a60 100%);
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: repeat(6, 16.67%);
+  grid-template-columns: repeat(4, 25%);
+  padding: 0.1rem 0;
+  grid-template-areas:
+    "display display display display"
+    "clear clear divide multiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals";
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  height: 80%;
+  max-height: 720px;
+  width: 20%;
+  max-width: 320px;
+  z-index: 10;
+}
+
+div[class^="calculator__button"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    background-color: #444;
+  }
+
+  &:active {
+    background-color: #666;
+  }
+}
+div.calculator__button--number {
+  background-color: #555;
+}
+#display {
+  grid-area: display;
+  color: #222;
+  place-self: center end;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
+#seven {
+  grid-area: seven;
+}
+#eight {
+  grid-area: eight;
+}
+#nine {
+  grid-area: nine;
+}
+#zero {
+  grid-area: zero;
+}
+#add {
+  grid-area: add;
+}
+#subtract {
+  grid-area: subtract;
+}
+#divide {
+  grid-area: divide;
+}
+#multiply {
+  grid-area: multiply;
+}
+#clear {
+  grid-area: clear;
+  background-color: #ee0121;
+  &:hover {
+    background-color: #dd0000;
+  }
+  &:active {
+    background-color: #cc0000;
+  }
+}
+#decimal {
+  grid-area: decimal;
+}
+#equals {
+  grid-area: equals;
+  background-color: #00aaff;
+  &:hover {
+    background-color: #0099dd;
+  }
+  &:active {
+    background-color: #0077aa;
+  }
+}
